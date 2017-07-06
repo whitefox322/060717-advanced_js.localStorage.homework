@@ -1,0 +1,84 @@
+body {
+   background: url("../images/bg.jpg") no-repeat;
+   background-size: cover;
+}
+
+.container {
+   width: 700px !important;
+}
+
+.chat {
+   text-align: center;
+
+   &__header {
+      font-family: "Yellowtail";
+      font-size: 40px;
+   }
+
+   &__list {
+      list-style: none;
+      text-align: left;
+      font-size: 18px;
+      padding: 0;
+      margin: 5px 20px;
+   }
+
+   &__item {
+      margin: 5px;
+   }
+
+   &__input,
+   &__view,
+   &__btn {
+      border: 1px solid #0d3349;
+      border-radius: 10px;
+   }
+
+   &__input,
+   &__btn {
+      font-family: "Fresca";
+      font-size: 18px;
+   }
+
+   &__input {
+      width: 100%;
+      max-width: 100%;
+   }
+
+   &__view {
+      font-family: "Courgette";
+      height: 350px;
+      margin: 20px 0;
+      box-shadow: 5px 5px 3px #0d3349;
+      overflow: scroll;
+   }
+
+   &__btn {
+      display: inline-block;
+      background-color: #0d3349;
+      color: white;
+      font-weight: 700;
+      line-height: 2.8em;
+      width: 100%;
+      margin: 0;
+   }
+
+   &__icon {
+      margin-left: 5px;
+      border: none;
+      background: transparent;
+      color: #710909;
+   }
+
+   &__clear {
+      border: none;
+      background: transparent;
+      color: #0d3349;
+      font-size: 16px;
+      font-weight: 700;
+   }
+}
+
+.flash {
+   color: #3e8f3e;
+}

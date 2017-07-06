@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LocalStorage Chat</title>
+    <link rel="stylesheet" href="styles/app.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Fresca|Courgette|Yellowtail" rel="stylesheet">
+</head>
+<body>
+<div class="container chat">
+    <header class="chat__header">
+        LocalStorage Chat
+    </header>
+    <div class="chat__view">
+        <div class="chat__history">
+            <button class="chat__clear" data-bind="click: clearStorage">
+                Clear history
+            </button>
+        </div>
+        <ul class="chat__list" data-bind="foreach: allMessages">
+            <li class="chat__item">
+                <span class="glyphicon glyphicon-ok flash"></span>
+                <span class="chat__text" data-bind="text: $data"></span>
+                <button class="chat__icon" data-bind="click: $parent.removeMessage">
+                    <span class="glyphicon glyphicon-remove"></span>
+                </button>
+            </li>
+        </ul>
+    </div>
+    <form class="row chat__messanger" data-bind="submit: writeInfo">
+        <div class="col-xs-9">
+            <textarea class="chat__input" rows="2" data-bind="value: message"></textarea>
+        </div>
+        <div class="col-xs-3">
+            <button class="chat__btn">
+                <span class="glyphicon glyphicon-send"></span>
+                Send
+            </button>
+        </div>
+    </form>
+</div>
+
+
+
+<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+
+<script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../node_modules/knockout/build/output/knockout-latest.debug.js"></script>
+<script src="../node_modules/toastr/build/toastr.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

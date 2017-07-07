@@ -13,6 +13,7 @@ var viewModel = {
             viewModel.message(null);
             viewModel.updateStorage();
             viewModel.getInfo();
+            toastr.success("Message has been added");
         }
     },
     removeMessage: function (msg) {
@@ -22,13 +23,13 @@ var viewModel = {
             viewModel.allMessages().splice(index, 1);
             viewModel.updateStorage();
             viewModel.getInfo();
+            toastr.error("Message has been removed");
         }
     },
     updateStorage: function () {
         localStorage[viewModel.MESSAGE_KEY] = JSON.stringify(viewModel.allMessages());
     },
     clearStorage: function () {
-        var ask = alert("Are you sure you want to clear history?");
             localStorage.clear();
             location.reload();
     }
@@ -42,4 +43,5 @@ window.addEventListener("storage", function (e) {
     if (e.key === viewModel.MESSAGE_KEY) {
         viewModel.getInfo();
     }
+    location.reload();
 });
